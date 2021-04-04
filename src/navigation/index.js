@@ -14,6 +14,9 @@ const StackNavigator = () => (
     <Stack.Screen
       name="BlurCarousel"
       component={BlurCarousel}
+      options={{
+        headerShown: false,
+      }}
     />
     <Stack.Screen
       name="PexelsGallery"
