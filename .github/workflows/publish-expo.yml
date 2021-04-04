@@ -5,6 +5,7 @@ on:
       - master
 jobs:
   publish:
+
     name: Install and publish
     runs-on: ubuntu-latest
     steps:
@@ -19,4 +20,5 @@ jobs:
           expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
       - run: yarn install
       - run: expo publish
-        env: ${{ secrets.PEXELS_API_KEY }}
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
