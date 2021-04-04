@@ -1,14 +1,23 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, Text, View, FlatList, Dimensions } from 'react-native';
+import {
+  Text,
+  View,
+  FlatList,
+  StatusBar,
+  StyleSheet,
+  Dimensions,
+  SafeAreaView,
+} from 'react-native';
 
 import { fetchImagesFromPexels } from './api';
+import { CloseButton } from '../../components';
 import { SPACING, IMAGE_SIZE } from './constants';
 import { FullScreenImage, Thumbnail } from './components';
 import { isThumbnailOutOfCenter, getThumbnailCenterOffset } from './utils';
 
 const { width: screenWidth } = Dimensions.get('screen');
 
-const PexelsGallery = () => {
+const PexelsGallery = ({ navigation }) => {
   const topRef = useRef();
   const thumbRef = useRef();
   const [images, setImages] = useState(null);
@@ -56,6 +65,9 @@ const PexelsGallery = () => {
 
   return (
     <View style={styles.container}>
+      <SafeAreaView style={styles.closeButtonContainer}>
+        <CloseButton onPress={() => navigation.popToTop()} />
+      </SafeAreaView>
       <FlatList
         horizontal
         ref={topRef}
@@ -94,6 +106,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#000',
+  },
+  closeButtonContainer: {
+    right: 10,
+    zIndex: 10,
+    position: 'absolute',
+    top: StatusBar.currentHeight || 0,
   },
   loadingContainer: {
     flex: 1,

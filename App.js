@@ -1,9 +1,12 @@
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 
-import { PexelsGallery } from './src/screens';
+import StackNavigator from './src/navigation';
 
 const App = () => (
-  <PexelsGallery />
+  <NavigationContainer>
+    <StackNavigator />
+  </NavigationContainer>
 );
 
 export default App;
