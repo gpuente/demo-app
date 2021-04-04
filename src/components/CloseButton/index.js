@@ -8,7 +8,7 @@ const CloseButton = (props) => {
 
   return (
     <View style={[styles.root, style]}>
-      <TouchableOpacity onPress={onPress}>
+      <TouchableOpacity onPress={onPress} style={styles.touchable}>
         <Ionicons
           size={25}
           color="white"
@@ -25,6 +25,12 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 25,
     overflow: 'hidden',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  touchable: {
+    width: 50,
+    height: 50,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
