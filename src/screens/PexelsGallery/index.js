@@ -65,6 +65,7 @@ const PexelsGallery = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor="#000" />
       <SafeAreaView style={styles.closeButtonContainer}>
         <CloseButton onPress={() => navigation.popToTop()} />
       </SafeAreaView>
@@ -111,7 +112,7 @@ const styles = StyleSheet.create({
     right: 10,
     zIndex: 10,
     position: 'absolute',
-    top: StatusBar.currentHeight || 0,
+    top: 10,
   },
   loadingContainer: {
     flex: 1,
