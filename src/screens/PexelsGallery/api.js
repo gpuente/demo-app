@@ -9,7 +9,6 @@ export const fetchImagesFromPexels = async () => {
     },
   });
 
-  console.log('>>>>>>>>>>>>>>>>data', data);
   const { photos } = await data.json();
   return photos;
 };
