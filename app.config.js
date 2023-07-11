@@ -16,7 +16,8 @@ export default {
       backgroundColor: '#ffffff'
     },
     updates: {
-      fallbackToCacheTimeout: 0
+      fallbackToCacheTimeout: 0,
+      useClassicUpdates: true
     },
     assetBundlePatterns: [
       '**/*'
